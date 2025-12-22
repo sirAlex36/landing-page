@@ -1,51 +1,73 @@
-import React from "react";
+import React from 'react';
+import { Container, Row, Col, Card } from 'react-bootstrap';
+// Using standard emojis for now to avoid the react-icons error
+// You can switch back to icons once the library is installed
 
 const Services = () => {
-  const services = [
+  const serviceOfferings = [
     {
-      title: "UI Design",
-      description:
-        "Design visually appealing and intuitive interfaces that improve user experience.",
-      icon: "🎨",
+      title: "Custom Web Applications",
+      description: "End-to-end development of scalable web apps using React, Node.js, and modern frameworks.",
+      icon: "🌐",
+      category: "Full-Stack"
     },
     {
-      title: "Responsive Layouts",
-      description:
-        "Web pages that adapt perfectly to all devices — from phones to large screens.",
+      title: "API Design & Integration",
+      description: "Building robust RESTful and GraphQL APIs to connect your software with third-party services.",
+      icon: "🔌",
+      category: "Backend"
+    },
+    {
+      title: "Database Architecture",
+      description: "Designing efficient SQL and NoSQL data models for speed, security, and scalability.",
+      icon: "🗄️",
+      category: "Architecture"
+    },
+    {
+      title: "Mobile-First Design",
+      description: "Creating responsive user interfaces that provide a seamless experience across all device sizes.",
       icon: "📱",
+      category: "Frontend"
     },
     {
-      title: "Web Page Creation",
-      description:
-        "Clean, optimized, and modern web pages built with HTML, CSS, and JavaScript.",
-      icon: "💻",
+      title: "Cloud Deployment",
+      description: "Automated CI/CD pipelines and hosting solutions on AWS, Azure, or Vercel.",
+      icon: "☁️",
+      category: "DevOps"
     },
     {
-      title: "Version Control",
-      description:
-        "Efficient project management and collaboration using Git and GitHub.",
-      icon: "⚙️",
-    },
+      title: "E-commerce Solutions",
+      description: "Secure payment gateway integration and custom storefronts for digital businesses.",
+      icon: "🛒",
+      category: "Business"
+    }
   ];
 
   return (
-    <section id="services" className="py-5 bg-light text-center">
-      <div className="container">
-        <h2 className="fw-bold mb-5 text-primary">My Services</h2>
-        <div className="row justify-content-center">
-          {services.map((service, index) => (
-            <div className="col-md-3 mb-4" key={index}>
-              <div className="card border-0 shadow-sm h-100 hover-shadow transition">
-                <div className="card-body">
-                  <div className="display-5 mb-3">{service.icon}</div>
-                  <h5 className="fw-bold mb-2">{service.title}</h5>
-                  <p className="text-muted small">{service.description}</p>
-                </div>
-              </div>
-            </div>
-          ))}
+    <section className="py-5 bg-white" id="services">
+      <Container>
+        <div className="text-center mb-5">
+          <h6 className="text-primary fw-bold text-uppercase">What We Offer</h6>
+
         </div>
-      </div>
+
+        <Row>
+          {serviceOfferings.map((service, index) => (
+            <Col key={index} lg={4} md={6} className="mb-4">
+              <Card className="h-100 border-0 shadow-sm p-3 service-card">
+                <Card.Body>
+                  <div className="fs-1 mb-3">{service.icon}</div>
+                  <div className="text-primary small fw-bold mb-2">{service.category}</div>
+                  <Card.Title className="fw-bold mb-3">{service.title}</Card.Title>
+                  <Card.Text className="text-muted">
+                    {service.description}
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+          ))}
+        </Row>
+      </Container>
     </section>
   );
 };
