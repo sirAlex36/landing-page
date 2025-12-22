@@ -1,74 +1,102 @@
 import React from 'react';
-import { Container, Row, Col, Card } from 'react-bootstrap';
+import { Container, Row, Col, Card, Badge } from 'react-bootstrap';
+import { ShieldCheck, Zap, BarChart3, Rocket, Banknote, LifeBuoy } from 'lucide-react'; // Modern icons
 
 const Features = () => {
   const businessValues = [
     {
-      title: "Fast Time-to-Market",
-      description: "Our agile development process ensures that your MVP or feature updates are deployed quickly without sacrificing code quality.",
-      icon: "⚡",
-      benefit: "Launch Faster"
+      title: "Agile Business Logic",
+      description: "We don't just build code; we map your real-world workflows into automated software pipelines that launch in weeks, not months.",
+      icon: <Zap size={32} className="text-warning" />,
+      benefit: "Speed to Market",
+      tag: "Rapid Deployment"
     },
     {
-      title: "Enterprise-Grade Security",
-      description: "We implement industry-standard encryption and security protocols to protect your business data and user privacy.",
-      icon: "🛡️",
-      benefit: "Stay Protected"
+      title: "Zero-Trust Architecture",
+      description: "In an era of data breaches, we bake security into the business logic layer with AES-256 encryption and multi-factor authentication.",
+      icon: <ShieldCheck size={32} className="text-success" />,
+      benefit: "Enterprise Security",
+      tag: "Secure by Design"
     },
     {
-      title: "Seamless Scalability",
-      description: "Your software grows with you. We build architectures that handle 100 or 100,000 users without breaking a sweat.",
-      icon: "📈",
-      benefit: "Grow Effortlessly"
+      title: "Elastic Infrastructure",
+      description: "Our logic scales horizontally. Whether you have 100 or 100,000 concurrent users, your system adapts automatically to the load.",
+      icon: <Rocket size={32} className="text-primary" />,
+      benefit: "Infinite Scalability",
+      tag: "Cloud Native"
     },
     {
-      title: "Cost-Effective Solutions",
-      description: "By using modern full-stack frameworks, we reduce development hours and hosting costs, maximizing your ROI.",
-      icon: "💰",
-      benefit: "Save More"
+      title: "Revenue-First Engineering",
+      description: "Every line of code is audited for ROI. We use modern stacks like Next.js and Go to slash server costs and boost conversion rates.",
+      icon: <Banknote size={32} className="text-info" />,
+      benefit: "Cost Optimization",
+      tag: "High ROI"
     },
     {
-      title: "24/7 Technical Support",
-      description: "We don't just build and leave. Flex Web Services provides ongoing maintenance to keep your systems running 24/7.",
-      icon: "🛠️",
-      benefit: "Total Peace of Mind"
+      title: "Full-Lifecycle DevOps",
+      description: "Flex Web Services provides 24/7 proactive monitoring. We identify and fix bottlenecks before your users even notice them.",
+      icon: <LifeBuoy size={32} className="text-danger" />,
+      benefit: "Reliability",
+      tag: "24/7 Uptime"
     },
     {
-      title: "Data-Driven Insights",
-      description: "We integrate advanced analytics into your software so you can make business decisions based on real user data.",
-      icon: "📊",
-      benefit: "Decide Smarter"
+      title: "Predictive Analytics",
+      description: "We embed business intelligence into your core logic, providing real-time dashboards that turn raw data into actionable strategy.",
+      icon: <BarChart3 size={32} className="text-secondary" />,
+      benefit: "Smart Growth",
+      tag: "Data-Driven"
     }
   ];
 
   return (
-    <Container className="my-5 py-5">
-      <div className="text-center mb-5">
-        <h2 className="display-4 fw-bold text-primary">Why Choose Us?</h2>
-        <p className="text-muted lead mx-auto" style={{ maxWidth: '700px' }}>
-          We don't just write code; we build the digital foundation for your company's success.
-        </p>
-      </div>
-      
-      <Row>
-        {businessValues.map((item, index) => (
-          <Col key={index} lg={4} md={6} className="mb-4">
-            <Card className="h-100 border-0 shadow-sm p-2 hover-shadow transition">
-              <Card.Body>
-                <div className="mb-3 p-3 bg-light rounded-circle d-inline-block fs-2">
-                  {item.icon}
-                </div>
-                <div className="badge bg-primary-subtle text-primary mb-2">{item.benefit}</div>
-                <Card.Title className="fw-bold mb-3">{item.title}</Card.Title>
-                <Card.Text className="text-muted">
-                  {item.description}
-                </Card.Text>
-              </Card.Body>
-            </Card>
+    <section className="py-5 bg-light overflow-hidden">
+      <Container className="py-lg-5">
+        <Row className="justify-content-center text-center mb-5">
+          <Col lg={8}>
+            <h6 className="text-uppercase fw-bold text-primary ls-1 mb-3">Our Competitive Edge</h6>
+            <h2 className="display-5 fw-bold mb-4">Engineering Success into your <span className="text-primary">Business Logic</span></h2>
+            <p className="lead text-muted">
+              We bridge the gap between complex business requirements and high-performance software engineering.
+            </p>
           </Col>
-        ))}
-      </Row>
-    </Container>
+        </Row>
+        
+        <Row className="g-4">
+          {businessValues.map((item, index) => (
+            <Col key={index} lg={4} md={6}>
+              <Card className="h-100 border-0 shadow-sm hover-up transition-all duration-300 rounded-4 overflow-hidden">
+                <Card.Body className="p-4 p-xxl-5">
+                  <div className="d-flex align-items-center justify-content-between mb-4">
+                    <div className="icon-box bg-white shadow-sm rounded-3 p-3">
+                      {item.icon}
+                    </div>
+                    <Badge bg="light" className="text-dark border rounded-pill px-3 py-2 fw-medium">
+                      {item.tag}
+                    </Badge>
+                  </div>
+                  <h4 className="fw-bold mb-3">{item.title}</h4>
+                  <p className="text-muted mb-0 lh-lg">
+                    {item.description}
+                  </p>
+                </Card.Body>
+                <div className="card-footer bg-transparent border-0 px-4 pb-4">
+                  <div className="text-primary fw-bold small text-uppercase ls-1">
+                    {item.benefit} &rarr;
+                  </div>
+                </div>
+              </Card>
+            </Col>
+          ))}
+        </Row>
+      </Container>
+      
+      {/* Optional: Simple inline CSS for the 'hover-up' effect */}
+      <style>{`
+        .hover-up { transition: all 0.3s ease-in-out; }
+        .hover-up:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.08) !important; }
+        .ls-1 { letter-spacing: 1px; }
+      `}</style>
+    </section>
   );
 };
 
