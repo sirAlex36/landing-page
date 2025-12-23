@@ -4,7 +4,7 @@ import App from './App.jsx'
 import { BrowserRouter } from 'react-router-dom'
 import { SpeedInsights } from "@vercel/speed-insights/react";
 
-SpeedInsights();
+
 
 // Ensure the ID inside quotes matches the ID in your index.html
 const rootElement = document.getElementById('root');
@@ -14,6 +14,7 @@ if (rootElement) {
     <React.StrictMode>
       <BrowserRouter>
         <App />
+        <SpeedInsights />
       </BrowserRouter>
     </React.StrictMode>
   );

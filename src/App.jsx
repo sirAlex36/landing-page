@@ -5,7 +5,6 @@ import ContactPage from './assets/Components/Contact';
 import Hero from './assets/Components/Hero';
 import Services from './assets/Components/Services';
 import Footer from './assets/Components/Footer';
-import { SpeedInsights } from "@vercel/speed-insights/next"
 import Pricing from './assets/Components/Pricing';
 import Reviews from './assets/Components/Reviews';
 import EnterpriseSolutions from './assets/Components/EnterpriseSolutions';
