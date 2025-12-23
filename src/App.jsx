@@ -6,7 +6,6 @@ import Hero from './assets/Components/Hero';
 import Services from './assets/Components/Services';
 import Footer from './assets/Components/Footer';
 import Pricing from './assets/Components/Pricing';
-import Reviews from './assets/Components/Reviews';
 import EnterpriseSolutions from './assets/Components/EnterpriseSolutions';
 import Features from './assets/Components/Features';
 import './App.css'; 
@@ -17,7 +16,7 @@ function App() {
       <header>
         <Navbar bg="dark" variant="dark" expand="lg" sticky="top">
           <Container>
-            <Navbar.Brand as={Link} to="/">Flex Solutions</Navbar.Brand>
+            <Navbar.Brand as={Link} to="/">FLEX SOLUTIONS</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="ms-auto">
@@ -40,7 +39,6 @@ function App() {
               <Hero />
               <Services />
               <EnterpriseSolutions />
-              <Reviews />
             </>
           } />
           
