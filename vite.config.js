@@ -1,7 +1,11 @@
+import { defineConfig } from 'vite';
+
 export default defineConfig({
+  // ... your other config
   build: {
     rollupOptions: {
-      external: ['next/navigation', 'next/api-utils'],
+      // This tells the bundler to ignore these imports instead of failing
+      external: ['next/navigation', 'next/headers', 'next/constants'],
     },
   },
 });
