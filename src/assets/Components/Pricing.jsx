@@ -78,7 +78,7 @@ const Pricing = () => {
         </Badge>
         <h1 className="fw-bold display-5">Affordable Engineering Excellence</h1>
         <p className="text-muted lead mx-auto" style={{ maxWidth: '600px' }}>
-          Flexible pricing built for the Kenyan business ecosystem. We support M-Pesa, Pesalink, and Bank Transfers.
+          Flexible pricing built for the Kenyan business ecosystem. We support M-Pesa, Binance, and Bank Transfers.
         </p>
       </div>
 
@@ -126,8 +126,6 @@ const Pricing = () => {
         <div className="d-flex justify-content-center gap-4 align-items-center flex-wrap opacity-75">
           <span className="fw-bold h5 text-muted">M-PESA DARAJA</span>
           <span className="fw-bold h5 text-muted">KRA iTAX</span>
-          <span className="fw-bold h5 text-muted">INTERSWITCH</span>
-          <span className="fw-bold h5 text-muted">AFRICA'S TALKING</span>
         </div>
       </div>
     </Container>
