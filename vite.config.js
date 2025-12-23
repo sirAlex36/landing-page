@@ -5,8 +5,13 @@ export default defineConfig({
   plugins: [react()],
   build: {
     rollupOptions: {
-      // This prevents Vite from trying to resolve Next.js modules
-      external: ['next/navigation', 'next/api-utils'],
+      // Rolldown needs to be told these don't exist in a React app
+      external: [
+        'next/navigation',
+        'next/headers',
+        'next/constants',
+        'next/api-utils'
+      ],
     },
   },
 })
