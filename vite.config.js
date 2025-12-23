@@ -1,11 +1,12 @@
-import { defineConfig } from 'vite';
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
 
 export default defineConfig({
-  // ... your other config
+  plugins: [react()],
   build: {
     rollupOptions: {
-      // This tells the bundler to ignore these imports instead of failing
-      external: ['next/navigation', 'next/headers', 'next/constants'],
+      // This prevents Vite from trying to resolve Next.js modules
+      external: ['next/navigation', 'next/api-utils'],
     },
   },
-});
+})
